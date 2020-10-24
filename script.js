@@ -63,7 +63,20 @@ function startQuiz() {
 
 // Question markup using a function
 function displayQuestion() {
+    // Create the question string
+    var questionMarkup =
+    `
+        <h2 id="question-title">${questions[questionIndex].quizQuestion}</h2>
+        <div id="choices" class="choices">
+            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[0]}</button>
+            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[1]}</button>
+            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[2]}</button>
+            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[3]}</button>
+        </div>
+    `;
 
+    // Inject question string markup as HTML
+    document.querySelector("#questions").innerHTML = questionMarkup;
 };
 
 // Process the answers
