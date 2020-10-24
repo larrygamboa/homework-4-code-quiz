@@ -35,6 +35,29 @@ var questions = [
 
 // Start the quiz using a function
 function startQuiz() {
+    // Hide start message
+    document.querySelector("#start-screen").classList.add("hide");
+
+    // Show the questions
+    document.querySelector("#questions").classList.remove("hide");
+
+    // Start the time
+    timer = setInterval(function() {
+        // Decrease time by 1 second
+        time--;
+
+        // Time countdown
+        document.querySelector("#time").textContent =  time;
+
+        // If time = 0
+        if (time <= 0) {
+            endQuiz();
+            alert ("Your time is up!");
+        }
+    }, 1000);
+
+    // Display the quiz question
+    displayQuestion();
 
 };
 
@@ -52,4 +75,7 @@ function processAnswer() {
 function endQuiz() {
 
 };
+
+// Start on click addEventListener
+document.querySelector("#start").addEventListener("click", startQuiz);
 
