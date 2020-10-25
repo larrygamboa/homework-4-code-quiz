@@ -80,8 +80,22 @@ function displayQuestion() {
 };
 
 // Process the answers
-function processAnswer() {
+function processAnswer(event) {
+    // If the answer is correct...
+    if (event.target.textContent === questions[questionIndex].answer) {
+        // ...add score
+        score ++;
+    }
+    // Otherwise, if the answer is wrong then remove 5 seconds
+    else {
+        time = time - 5;
+    }
 
+    // Move to the next question after previous question has been answered
+    questionIndex ++;
+
+    // Show the next question
+    displayQuestion();
 };
 
 // End the quiz
@@ -92,3 +106,10 @@ function endQuiz() {
 // Start on click addEventListener
 document.querySelector("#start").addEventListener("click", startQuiz);
 
+// Answer on click addeventListener
+document.querySelector("#questions").addEventListener("click", function(event) {
+    // Filter for answer choice click
+    if (event.target.className.indexOf("answer-choice") > -1) {
+        processAnswer(event);
+    }
+});
