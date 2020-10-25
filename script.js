@@ -130,7 +130,7 @@ function processAnswer(event) {
 // End the quiz
 function endQuiz() {
     // Display the score
-    document.querySelector("#final-score").textContent = score;
+    document.querySelector("#final-score").textContent = score + "/5";
 
     // End the timer
     clearInterval(timer);
