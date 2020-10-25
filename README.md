@@ -5,6 +5,8 @@ homework 4 code quiz
 
 **GitHub repository**: https://github.com/larrygamboa/homework-4-code-quiz
 
+**Screenshot**: https://github.com/larrygamboa/homework-4-code-quiz/blob/main/javascript-coding-quiz-screen-shot.png
+
 ## Purpose
 
 The purpose of the homework is to create a timed Javascript quiz app with multiple choice questions. The quiz app will run in the browser and will feature dynamically updated HTML and CSS powered by Javascript. The app will have the abilty to store high scores. The criteria are as follows:
