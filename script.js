@@ -41,7 +41,7 @@ function startQuiz() {
     // Show the questions
     document.querySelector("#questions").classList.remove("hide");
 
-    // Start the time
+    // Start the timer
     timer = setInterval(function() {
         // Decrease time by 1 second
         time--;
@@ -64,7 +64,7 @@ function startQuiz() {
 // Question markup using a function
 function displayQuestion() {
     // Create the question string
-    var questionMarkup =
+    var questionMarkUp =
     `
         <h2 id="question-title">${questions[questionIndex].quizQuestion}</h2>
         <div id="choices" class="choices">
@@ -76,17 +76,17 @@ function displayQuestion() {
     `;
 
     // Inject question string markup as HTML
-    document.querySelector("#questions").innerHTML = questionMarkup;
+    document.querySelector("#questions").innerHTML = questionMarkUp;
 };
 
 // Process the answers
 function processAnswer(event) {
     // If the answer is correct...
     if (event.target.textContent === questions[questionIndex].answer) {
-        // ...add score
-        score ++;
-    }
-    // Otherwise, if the answer is wrong then remove 5 seconds
+        // ... then add score
+        score++;
+    } 
+    // If answer is wrong, subtract 5 sec from timer
     else {
         time = time - 5;
     }
@@ -94,20 +94,35 @@ function processAnswer(event) {
     // Move to the next question after previous question has been answered
     questionIndex ++;
 
+    // After you answer the last question, end the quiz
+    if (questionIndex === questions.length) {
+        endQuiz();
+    }
+
     // Show the next question
     displayQuestion();
 };
 
 // End the quiz
 function endQuiz() {
+    // Display the score
+    document.querySelector("#final-score").textContent = score;
 
+    // End the timer
+    clearInterval(timer);
+
+    // Show end screen
+    document.querySelector("#end-screen").classList.remove("hide");
+
+    // Hide the questions
+    document.querySelector("#questions").classList.add("hide");
 };
 
 // Start on click addEventListener
 document.querySelector("#start").addEventListener("click", startQuiz);
 
 // Answer on click addeventListener
-document.querySelector("#questions").addEventListener("click", function(event) {
+document.querySelector("#questions").addEventListener("click",function(event) {
     // Filter for answer choice click
     if (event.target.className.indexOf("answer-choice") > -1) {
         processAnswer(event);
