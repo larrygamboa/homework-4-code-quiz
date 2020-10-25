@@ -1,6 +1,7 @@
 body {
+    background-color: #fbfbfb;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 header {
@@ -19,7 +20,7 @@ header {
     padding: 10px;
 }
 
-.start {
+.start, .end {
     text-align: center;
 }
 
@@ -27,48 +28,37 @@ header {
     display: none;
 }
 
-  .choices button {
-    display: block;
-  }
-  
-  input[type="text"] {
-    font-size: 100%;
-  }
-  
-  ol {
-    padding-left: 0px;
-    max-height: 400px;
-    overflow: auto;
-  }
-  
-  li {
-    padding: 5px;
-    list-style: decimal inside none;
-  }
-  
-  li:nth-child(odd) {
-    background-color: #f3edfc;
-  }
-  
-  .wrapper {
-    margin: 100px auto 0 auto;
-    max-width: 600px;
-  }
-  
+.wrapper {
+  margin: 50px auto 0 auto;
+  max-width: 600px;
+}
 
-  
+.answer-choice {
+  width: 100%;
+}
 
+.choices button {
+  display: block;
+}
   
+input[type="text"] {
+  font-size: 100%;
+}
+  
+ol {
+  padding-left: 0px;
+  max-height: 400px;
+  overflow: auto;
+}
+  
+li {
+  padding: 5px;
+  list-style: decimal inside none;
+}
+  
+li:nth-child(odd) {
+  background-color: #f3edfc;
+}
 
-  
-  .feedback {
-    font-style: italic;
-    font-size: 120%;
-    margin-top: 20px;
-    padding-top: 10px;
-    color: gray;
-    border-top: 2px solid #ccc;
-  }
-  
 
   

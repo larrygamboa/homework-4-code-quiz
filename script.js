@@ -7,29 +7,53 @@ var questionIndex = 0;
 // Set up questions in array
 var questions = [
     {
-        quizQuestion: "Question 1?",
-        choices: ["answer1", "answer2", "answer3", "answer4"],
-        answer: "answer1"
+        quizQuestion: "JavaScript is designed for following purpose:",
+        choices: [
+            "To style HTML pages", 
+            "To execute queries related to databases on a server", 
+            "To add interactivity to HTML pages", 
+            "All of the above"
+        ],
+        answer: "All of the above"
     },
     {
-        quizQuestion: "Question 2?",
-        choices: ["answer1", "answer2", "answer3", "answer4"],
-        answer: "answer1"
+        quizQuestion: "Which of the following is not Javascript data type?",
+        choices: [
+            "Undefined", 
+            "Number", 
+            "Boolean", 
+            "Float"
+        ],
+        answer: "Float"
     },
     {
-        quizQuestion: "Question 3?",
-        choices: ["answer1", "answer2", "answer3", "answer4"],
-        answer: "answer1"
+        quizQuestion: "What are the types of pop up boxes available in Javascript?",
+        choices: [
+            "Alert",
+            "Prompt",
+            "Confirm",
+            "All of the above"],
+        answer: "All of the above"
     },
     {
-        quizQuestion: "Question 4?",
-        choices: ["answer1", "answer2", "answer3", "answer4"],
-        answer: "answer1"
+        quizQuestion: "What are variables used for in Javascript programs?",
+        choices: [
+            "Storing numbers, dates, or other values", 
+            "Varying randomly", 
+            "Causing high-school algebra flashbacks", 
+            "All of the above"
+        ],
+        answer: "Storing numbers, dates, or other values"
     },
     {
-        quizQuestion: "Question 5?",
-        choices: ["answer1", "answer2", "answer3", "answer4"],
-        answer: "answer1"
+        quizQuestion: "The statement a===b refers to",
+        choices: [
+            "Both a and b are equal in value, type and reference address", 
+            "Both a and b are equal in value", 
+            "Both a and b are equal in value and type", 
+            "There is no such statement"
+        ],
+        answer: "Both a and b are equal in value and type"
     }
 ];
 
@@ -68,10 +92,10 @@ function displayQuestion() {
     `
         <h2 id="question-title">${questions[questionIndex].quizQuestion}</h2>
         <div id="choices" class="choices">
-            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[0]}</button>
-            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[1]}</button>
-            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[2]}</button>
-            <button class="answer-choice btn btn-primary mb-3">${questions[questionIndex].choices[3]}</button>
+            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[0]}</button>
+            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[1]}</button>
+            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[2]}</button>
+            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[3]}</button>
         </div>
     `;
 
