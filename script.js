@@ -1,6 +1,6 @@
 // List variables
 var timer;
-var time = 60;
+var time = 120;
 var score = 0;
 var questionIndex = 0;
 
@@ -92,10 +92,10 @@ function displayQuestion() {
     `
         <h2 id="question-title">${questions[questionIndex].quizQuestion}</h2>
         <div id="choices" class="choices">
-            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[0]}</button>
-            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[1]}</button>
-            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[2]}</button>
-            <button class="answer-choice btn btn-outline-info mb-3">${questions[questionIndex].choices[3]}</button>
+            <button class="answer-choice btn btn-outline-primary mt-3">${questions[questionIndex].choices[0]}</button>
+            <button class="answer-choice btn btn-outline-primary mt-3">${questions[questionIndex].choices[1]}</button>
+            <button class="answer-choice btn btn-outline-primary mt-3">${questions[questionIndex].choices[2]}</button>
+            <button class="answer-choice btn btn-outline-primary mt-3">${questions[questionIndex].choices[3]}</button>
         </div>
     `;
 
@@ -110,9 +110,9 @@ function processAnswer(event) {
         // ... then add score
         score++;
     } 
-    // If answer is wrong, subtract 5 sec from timer
+    // If answer is wrong, subtract 10 sec from timer
     else {
-        time = time - 5;
+        time = time - 10;
     }
 
     // Move to the next question after previous question has been answered
