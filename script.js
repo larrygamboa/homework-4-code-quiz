@@ -1,6 +1,6 @@
 // List variables
 var timer;
-var time = 120;
+var time = 75;
 var score = 0;
 var questionIndex = 0;
 
